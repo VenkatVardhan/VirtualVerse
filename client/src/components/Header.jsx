@@ -35,24 +35,24 @@ export const Header = () => {
 
       </Button>
       <Link to='/sign-in'>
-      <Button gradientDuoTone='cyanToBlue' >
+      <Button gradientDuoTone='cyanToBlue' outline >
         Sign In
       </Button>
       </Link>
       <Navbar.Toggle/>
        </div>
        <Navbar.Collapse>
-        <Navbar.Link active={path==='/'} as={div}>
+        <Navbar.Link active={path==='/'} as={'div'}>
           <Link to='/'>
             Home
           </Link>
         </Navbar.Link>
-        <Navbar.Link active={path==='/about'}as={div}>
+        <Navbar.Link active={path==='/about'}as={'div'}>
           <Link to='/about'>
             About
           </Link>
         </Navbar.Link>
-        <Navbar.Link active={path==='/projects'}as={div}>
+        <Navbar.Link active={path==='/projects'}as={'div'}>
           <Link to='/projects'>
             Projects
           </Link>
