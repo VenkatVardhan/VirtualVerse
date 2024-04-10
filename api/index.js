@@ -15,3 +15,14 @@ app.listen(3000,()=>{console.log("server started on port 3000!")});
 
 app.use('/api/user',userRouter);
 app.use('/api/auth',authRouter);
+
+app.use((err,req,res,next )=>{
+    const status=err.statusCode || 500;
+    const message=err.message ||'Internal Server Error';
+
+    res.json({
+        success:"false",
+        status,
+        message
+    });
+});
