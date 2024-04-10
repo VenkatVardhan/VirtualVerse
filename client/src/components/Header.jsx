@@ -14,7 +14,7 @@ export const Header = () => {
     <Navbar className='border-b-2'>
         <Link to="/" className='self-center text-sm sm:text-xl whitespace-nowrap font-semibold dark:text-white' >
             <span>
-                <span className='px-2 py-1 bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-400 rounded-lg text-white'>Virtual</span>Verse
+                <span className='px-2 py-1 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-semiBold   text-center me-2 mb-2 rounded-lg text-white'>Virtual</span>Verse
             </span>
         </Link>
        <form >
@@ -35,7 +35,7 @@ export const Header = () => {
 
       </Button>
       <Link to='/sign-in'>
-      <Button gradientDuoTone='cyanToBlue' outline >
+      <Button gradientDuoTone='purpleToBlue' outline >
         Sign In
       </Button>
       </Link>
