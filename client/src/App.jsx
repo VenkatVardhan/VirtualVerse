@@ -8,6 +8,7 @@ import { SignIn } from './pages/SignIn'
 import { About } from './pages/About'
 import { Projects } from './pages/Projects'
 import { Header } from './components/Header'
+import { FooterComponent } from './components/FooterComponent'
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
       
 
     </Routes>
+    <FooterComponent/>
     </BrowserRouter>
     
   )
