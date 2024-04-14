@@ -5,7 +5,7 @@ import {BsFacebook,BsInstagram,BsGithub,BsLinkedin} from 'react-icons/bs'
 
 export const FooterComponent = () => {
   return (
-    <Footer container className='border border-t-8 border-teal-500'>
+    <Footer container className='border border-t-6 border-blue-500'>
     <div className='w-full w-max-7xl mx-auto '>
       <div className='w-full justify-between grid sm:flex md:grid-col-1'>
         <div className=''>
