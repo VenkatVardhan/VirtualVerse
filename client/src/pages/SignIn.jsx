@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import {Alert, Button,Label, Spinner, TextInput} from 'flowbite-react'
 
 import {signInStart,signInSuccess,signInFailure} from '../redux/user/userSlice.js'
+import { OAuth } from '../components/OAuth.jsx'
 
 
 
@@ -97,6 +98,7 @@ export const SignIn = () => {
             }       
 
           </Button>
+          <OAuth/>
 
         </form>
         <div className='text-sm mt-5 flex flex-row gap-2'>
