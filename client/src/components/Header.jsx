@@ -1,15 +1,18 @@
 import React from 'react'
-import {Navbar,  TextInput} from 'flowbite-react'
-import { Link,useLocation } from 'react-router-dom'
+import {Avatar, Dropdown, DropdownDivider, DropdownHeader, DropdownItem, Navbar,  TextInput} from 'flowbite-react'
+import { Link,useAsyncValue,useLocation } from 'react-router-dom'
 import {AiOutlineSearch} from'react-icons/ai'
 import { Button } from 'flowbite-react'
 import {FaMoon} from 'react-icons/fa'
+
+import { useSelector } from 'react-redux'
 
 
 
 
 export const Header = () => {
-  const path=useLocation().pathname
+  const path=useLocation().pathname;
+  const {currentUser}=useSelector((state)=>state.user);
   return (
     <Navbar className='border-b-2'>
         <Link to="/" className='self-center text-sm sm:text-xl whitespace-nowrap font-semibold dark:text-white' >
@@ -34,11 +37,33 @@ export const Header = () => {
           <FaMoon/>
 
       </Button>
-      <Link to='/sign-in'>
+      {
+        currentUser?(
+          <Dropdown arrowIcon={false} inline label={<Avatar alt='user'img={currentUser.profilePicture} rounded/>}>
+            <DropdownHeader>
+              <span className='block text-sm'>@{currentUser.username}</span>
+              <span className='block text-md font-medium truncate'>{currentUser.email}</span>
+            </DropdownHeader>
+            <DropdownItem>
+              <Link to='/dashboard?tab=profile'>
+                profile
+              </Link>
+            </DropdownItem>
+            <DropdownDivider/>
+             <DropdownItem>
+              
+                Sign Out
+              
+            </DropdownItem>
+            
+          </Dropdown>
+        ):(  <Link to='/sign-in'>
       <Button gradientDuoTone='purpleToBlue' outline >
         Sign In
       </Button>
-      </Link>
+      </Link>)
+      }
+    
       <Navbar.Toggle/>
        </div>
        <Navbar.Collapse>
@@ -52,6 +77,7 @@ export const Header = () => {
             About
           </Link>
         </Navbar.Link>
+        
         <Navbar.Link active={path==='/projects'}as={'div'}>
           <Link to='/projects'>
             Projects
