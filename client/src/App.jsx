@@ -10,6 +10,8 @@ import { Projects } from './pages/Projects'
 import { Header } from './components/Header'
 import { FooterComponent } from './components/FooterComponent'
 
+import { PrivateRoute } from './components/PrivateRoute'
+
 
 const App = () => {
   return (
@@ -22,7 +24,10 @@ const App = () => {
       <Route path ="/sign-in" element={<SignIn/>}/>
       <Route path ="/sign-up" element={<SignUp/>}/>
       <Route path ="/projects" element={<Projects/>}/>
-      <Route path ="/dashboard" element={<Dashboard/>}/>
+      <Route element={<PrivateRoute/>}>
+        <Route path ="/dashboard" element={<Dashboard/>}/>
+      </Route>
+
       
 
     </Routes>
