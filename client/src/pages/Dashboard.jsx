@@ -17,17 +17,17 @@ export const Dashboard = () => {
 
   },[location.search])
   return (
-    <div className='min-h-screen flex flex-col md:flex-row'>
+    < div className='min-h-screen flex flex-col md:flex-row'>
       {/* side div */}
       <div className='md:w-56'>
 
       <DashboardSidebar/>
       </div>
       {/* profile div  */}
-      <div>
+      
 
        {tab==='profile' &&<DashboardProfile/>}
-      </div>
+      
     </div>
   )
 }
